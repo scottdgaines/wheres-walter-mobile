@@ -1,10 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
+import Browse from '../Browse/Browse'
 
-export default function App() {
+
+const App = () => {
   return (
    <View>
     <Text>Hello</Text>
+    <Browse 
+      lostNotices={true}
+    />
+    <Browse 
+    />
    </View>
   );
 }
@@ -17,3 +24,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App
