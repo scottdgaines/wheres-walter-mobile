@@ -1,12 +1,28 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
+import {CleanedPet} from '../../utils'
 
-const Card = () => {
+type Props = {
+    key: number;
+    pet: CleanedPet
+}
+
+const Card: React.FC<Props> = ({ key, pet }) => {
   return (
-    <View>
-        <Text>Hello from the card component</Text>
+    <View style={styles.container}>
+        <Text>{pet.petName}</Text>
+        <Text>{pet.petBreed}</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        borderWidth: 1,
+        borderColor: 'black',
+        padding: 10,
+        margin: 10
+    }
+})
 
 export default Card

@@ -10,8 +10,22 @@ interface Pet {
     strDrinkThumb: string
 }
 
-const cleanData = (data: Pet[]) => {
-    const cleanData = data.map((pet: Pet) => {
+export interface CleanedPet {
+    noticeID: number,
+    noticeType: string,
+    petName: string,
+    petImage: string,
+    petBreed: string,
+    dateLost: string,
+    chipNum: number,
+    petNotes: string,
+    contactNum: string,
+    contactEmail: string,
+    reward: string
+}
+
+const cleanData = (data: Pet[]): CleanedPet[] => {
+    const cleanedData: CleanedPet[] = data.map((pet: Pet) => {
         return {
            noticeID: pet.idDrink,
            noticeType: 'Lost',
@@ -21,11 +35,13 @@ const cleanData = (data: Pet[]) => {
            dateLost: pet.dateModified,
            chipNum: pet.idDrink,
            petNotes: pet.strInstructions,
-           contactNum: pet.dateModified,
+           contactNum: `${pet.idDrink}-${pet.idDrink}`,
            contactEmail: pet.strCategory,
            reward: pet.strCreativeCommonsConfirmed
         }
     })
+  
+    return cleanedData
 }
 
 export default cleanData

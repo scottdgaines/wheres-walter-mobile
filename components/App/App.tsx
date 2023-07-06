@@ -1,19 +1,27 @@
+import * as React from 'react';
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native';
-import Browse from '../Browse/Browse'
-import {NavigationContainer} from '@react-navigation/native'
+import Browse from '../Browse/Browse';
+import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import fetchData from '../../apiCalls'
-
-
+import fetchData from '../../apiCalls';
+import { CleanedPet } from '../../utils';
+ 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const [allPets, setAllPets] = useState([])
+  // return (
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name="Home" component={App} />
+    //     <View>
 
-  const loadData = () => {
-    let data = fetchData()
+  const [allPets, setAllPets] = useState<CleanedPet[]>([])
 
+  const loadData = async () => {
+    let data: CleanedPet[] = await fetchData()
+    setAllPets(data)
+    const [allPets, setAllPets] = useState([])
   }
 
   useEffect (() => {
@@ -21,18 +29,18 @@ const App = () => {
   }, [])
 
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen 
-    //       name="Home"
-    //       component={Browse}
-    //     />
-        <View>
+  // <NavigationContainer>
+  //      <Stack.Navigator>
+  //        <Stack.Screen 
+  //          name="Home"
+  //       component={Browse}
+  //        /> 
+        <View style={styles.appContainer}>
           <Text>Hello</Text>
           <Browse 
             lostNotices={true}
-          />
-          <Browse />
+            pets={allPets}
+        />
         </View>
     //   </Stack.Navigator>
     // </NavigationContainer>
@@ -40,7 +48,7 @@ const App = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
