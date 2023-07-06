@@ -12,7 +12,8 @@ const App = () => {
   const [allPets, setAllPets] = useState([])
 
   const loadData = () => {
-    fetchData()
+    let data = fetchData()
+
   }
 
   useEffect (() => {
