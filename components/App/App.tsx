@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Browse from '../Browse/Browse';
 import {NavigationContainer} from '@react-navigation/native';
@@ -15,16 +15,16 @@ const App = () => {
     //     <Stack.Screen name="Home" component={App} />
     //     <View>
 
-  const [allPets, setAllPets] = useState<CleanedPet[]>([])
+  const [allPets, setAllPets] = useState<CleanedPet[]>([]);
 
   const loadData = async () => {
     let data: CleanedPet[] = await fetchData()
     setAllPets(data)
-  }
+  };
 
   useEffect (() => {
     loadData()
-  }, [])
+  }, []);
 
   return (
   // <NavigationContainer>
