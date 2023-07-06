@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import Browse from '../Browse/Browse';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import fetchData from '../../apiCalls';
 import { CleanedPet } from '../../utils';
-
+ 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
   const loadData = async () => {
     let data: CleanedPet[] = await fetchData()
     setAllPets(data)
-    console.log('pets', allPets)
+    const [allPets, setAllPets] = useState([])
   }
 
   useEffect (() => {
@@ -57,5 +57,3 @@ const styles = StyleSheet.create({
 });
 
 export default App
-
-

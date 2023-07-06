@@ -9,6 +9,7 @@ interface Pet {
     strCreativeCommonsConfirmed: string,
     strDrinkThumb: string
 }
+
 export interface CleanedPet {
     noticeID: number,
     noticeType: string,
@@ -39,7 +40,7 @@ const cleanData = (data: Pet[]): CleanedPet[] => {
            reward: pet.strCreativeCommonsConfirmed
         }
     })
-
+  
     return cleanedData
 }
 

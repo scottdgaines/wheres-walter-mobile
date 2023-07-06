@@ -5,6 +5,7 @@ const fetchData = async () => {
     const data = await response.json()
     const notices = await cleanData(data.drinks)
     return notices
+
 }
 
 export default fetchData
