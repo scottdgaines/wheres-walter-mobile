@@ -1,11 +1,11 @@
-import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
-import {CleanedPet} from '../../utils'
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import { CleanedPet } from '../../interfaces';
 
 type Props = {
-    key: number;
+    key: number,
     pet: CleanedPet
-}
+};
 
 const Card: React.FC<Props> = ({ key, pet }) => {
   return (
@@ -13,7 +13,7 @@ const Card: React.FC<Props> = ({ key, pet }) => {
         <Text>{pet.petName}</Text>
         <Text>{pet.petBreed}</Text>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

@@ -1,11 +1,10 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Browse from '../Browse/Browse';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import fetchData from '../../apiCalls';
-import { CleanedPet } from '../../utils';
+import { CleanedPet } from '../../interfaces';
  
 const Stack = createNativeStackNavigator();
 
@@ -16,16 +15,16 @@ const App = () => {
     //     <Stack.Screen name="Home" component={App} />
     //     <View>
 
-  const [allPets, setAllPets] = useState<CleanedPet[]>([])
+  const [allPets, setAllPets] = useState<CleanedPet[]>([]);
 
   const loadData = async () => {
     let data: CleanedPet[] = await fetchData()
     setAllPets(data)
-  }
+  };
 
   useEffect (() => {
     loadData()
-  }, [])
+  }, []);
 
   return (
   // <NavigationContainer>
