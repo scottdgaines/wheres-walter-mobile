@@ -5,7 +5,7 @@ import Browse from '../Browse/Browse';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import fetchData from '../../apiCalls';
-import { CleanedPet } from '../../utils';
+import { CleanedPet } from '../../interfaces';
  
 const Stack = createNativeStackNavigator();
 

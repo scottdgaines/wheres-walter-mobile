@@ -1,6 +1,6 @@
 import React from 'react'
 import {ScrollView, Text, View} from 'react-native'
-import { CleanedPet } from '../../utils'
+import { CleanedPet } from '../../interfaces'
 import Card from '../Card/Card'
 
 type Props = {
