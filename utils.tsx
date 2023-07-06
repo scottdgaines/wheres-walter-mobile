@@ -1,4 +1,4 @@
-import { CleanedPet, Pet } from './interfaces'
+import { CleanedPet, Pet } from './interfaces';
 
 const cleanData = (data: Pet[]): CleanedPet[] => {
     const cleanedData: CleanedPet[] = data.map((pet: Pet) => {
@@ -14,9 +14,9 @@ const cleanData = (data: Pet[]): CleanedPet[] => {
            contactNum: `${pet.idDrink}-${pet.idDrink}`,
            contactEmail: pet.strCategory,
            reward: pet.strCreativeCommonsConfirmed
-        }
+        };
     })
-    return cleanedData
+    return cleanedData;
 }
 
 export default cleanData
