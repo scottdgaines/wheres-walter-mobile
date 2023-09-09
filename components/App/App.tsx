@@ -4,7 +4,8 @@ import Browse from '../Browse/Browse';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import fetchData from '../../apiCalls';
-import { CleanedPet } from '../../interfaces';
+import { Pet } from '../../interfaces';
+import { allNotices } from '../../dataset'
  
 const Stack = createNativeStackNavigator();
 
@@ -15,11 +16,12 @@ const App = () => {
     //     <Stack.Screen name="Home" component={App} />
     //     <View>
 
-  const [allPets, setAllPets] = useState<CleanedPet[]>([]);
+  const [allPets, setAllPets] = useState<Pet[]>([]);
 
-  const loadData = async () => {
-    let data: CleanedPet[] = await fetchData()
-    setAllPets(data)
+  const loadData = () => {
+    //until a BE can be built, data will be pulled from an internal data set in place of a fetch request
+    setAllPets(allNotices)
+    console.log(allPets)
   };
 
   useEffect (() => {
