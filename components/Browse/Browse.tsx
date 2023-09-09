@@ -1,11 +1,11 @@
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
-import { CleanedPet } from '../../interfaces';
+import { Pet } from '../../interfaces';
 import Card from '../Card/Card';
 
 type Props = {
     lostNotices?: boolean,
-    pets?: CleanedPet[]
+    pets?: Pet[]
 };
 
 const Browse: React.FC<Props> = ({ lostNotices, pets }) => {
@@ -17,7 +17,7 @@ const Browse: React.FC<Props> = ({ lostNotices, pets }) => {
         dynamicWording = "these are the found notices";
     };
 
-    const card = pets ? pets.map((pet: CleanedPet) => {
+    const card = pets ? pets.map((pet: Pet) => {
         return (
             <Card 
                 key={pet.noticeID} 
