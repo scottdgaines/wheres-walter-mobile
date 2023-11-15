@@ -3,7 +3,7 @@
 
 ## Overview
 Where's Walter was created out of the need for a central platform allowing pet owners to post their lost pet notices, allowing for more accessibilty and a wider outreach to 
-help bring their family members home. The intention is for users to be able to create or update their own lost or found notices, browse those created by other members, and connect, message, 
+help bring their family members home. The intention is for users to create or update their own lost or found pet notices, browse those created by other members, and connect, message, 
 and follow other members or notice updates.
 
 ## Context
